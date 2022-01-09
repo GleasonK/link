@@ -42,7 +42,7 @@ GitHub Pages will serve the _link_ tracking and forwarding repo for free!
 ## 5. All done!
 Links can now be created using `<username>.github.io/link/?l=<url>`.
 
-Github pages can be configured to a custom domain name (mine is set to kevingleason.me), which allows creation of tracked links to have a custom name.
+Github pages can be configured to a custom domain name - currently I use [kevingleason.me/link][example_link]), which allows creation of tracked links to have a custom name.
 
 [How to Setup a Custom Domain with GitHub Pages][gh_custom_domain]
 
