@@ -1,7 +1,7 @@
 # link
 ### Free client side link tracking with GitHub Pages & Google Analytics
 
-**Simply fork, configure, and create your own custom tracked links!*
+**Simply fork, configure, and create your own custom tracked links!**
 
 Example: [My GitHub Profile][example_link]
 
