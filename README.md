@@ -3,7 +3,7 @@
 
 **Simply fork, configure, and create your own custom tracked links!*
 
-Example: [My GitHub Profile](https://kevingleason.me/link/?l=https://github.com/GleasonK/)
+Example: [My GitHub Profile][example_link]
 
 ![Google Analytics Dashboard](https://github.com/GleasonK/link/blob/main/readme_img.png?raw=true)
 
@@ -46,7 +46,7 @@ Github pages can be configured to a custom domain name (mine is set to kevinglea
 
 [How to Setup a Custom Domain with GitHub Pages][gh_custom_domain]
 
-[example_link]:
+[example_link]:https://kevingleason.me/link/?l=https://github.com/GleasonK/
 [google_setup]:https://support.google.com/analytics/answer/1008015
 [gh_fork_repo]:https://docs.github.com/en/get-started/quickstart/fork-a-repo
 [google_find_id]:https://support.google.com/analytics/answer/1008080
