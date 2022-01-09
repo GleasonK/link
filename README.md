@@ -21,7 +21,7 @@ _link_ tracking uses GitHub Pages to collect data and redirect users.
 
 [How to Fork a Repo][gh_fork_repo]
 
-## 3. Set your google analytics ID in the `config` field of link.js
+## 3. Set your Google Analytics ID in the `config` field of link.js
 Set the `gaID` field in `link.js` of your forked repo. This ID is used by Google to direct Analytics Events such as link clicks to your account.
 
 ```js
@@ -34,7 +34,7 @@ Analytics ID can be found in the Admin panel on Google Analytics.
 
 [How to Find Google Analytics ID][google_find_id]
 
-## 4. Set up github pages for your repo
+## 4. Set up GitHub Pages for your repo
 GitHub Pages will serve the _link_ tracking and forwarding repo for free!
 
 [How to Setup GitHub Pages for a Repository][gh_pages_setup]
