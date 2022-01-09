@@ -1,10 +1,11 @@
 # link
 ### Free client side link tracking with GitHub Pages & Google Analytics
-Lightweight URL tracking with easy setup, and no server required. Simply fork, configure, and create your own custom tracked links!
+
+**Simply fork, configure, and create your own custom tracked links!*
+
+Example: [My GitHub Profile](https://kevingleason.me/link/?l=https://github.com/GleasonK/)
 
 ![Google Analytics Dashboard](https://github.com/GleasonK/link/blob/main/readme_img.png?raw=true)
-
-Example link: [https://kevingleason.me/link/?l=https://github.com/GleasonK/](https://kevingleason.me/link/?l=https://github.com/GleasonK/)
 
 
 # Setup
