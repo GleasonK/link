@@ -17,6 +17,7 @@ const config = {
 	repoName: "link",      // The name of the github repository
 	queryParam: "l",       // The query parameter with forward URL: `me.com/link/?l=url
 	url404: "404.html",    // The 404 page to forward to: `404.hmtl?badAttemptHref`
+	timeout: 1000,         // Timeout until redirect, used if GA is blocked by browser (default 1s)
 };
 
 function getCurrentUrlNoQuery() {
@@ -60,7 +61,7 @@ function forwardUrl(url) {
 }
 
 // https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#knowing_when_the_hit_has_been_sent
-function createFunctionWithTimeout(callback, opt_timeout) {
+function createFunctionWithTimeout(callback) {
 	// Default timeout 1 second.
 	var called = false;
 	function fn() {
@@ -69,7 +70,7 @@ function createFunctionWithTimeout(callback, opt_timeout) {
 			callback();
 		}
 	}
-	setTimeout(fn, opt_timeout || 1000);
+	setTimeout(fn, config.timeout);
 	return fn;
 }
 

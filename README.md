@@ -7,7 +7,6 @@ Example: [My GitHub Profile][example_link]
 
 ![Google Analytics Dashboard](https://github.com/GleasonK/link/blob/main/readme_img.png?raw=true)
 
-
 # Setup
 ## 1. Create a Google Analytics account (if needed)
 This step can be skipped if you already have an account.
@@ -45,6 +44,9 @@ Links can now be created using `<username>.github.io/link/?l=<url>`.
 Github pages can be configured to a custom domain name - currently I use [kevingleason.me/link][example_link]), which allows creation of tracked links to have a custom name.
 
 [How to Setup a Custom Domain with GitHub Pages][gh_custom_domain]
+
+# Notes
+This link tracking is as accurate as Google Analytics. If browsers block Google Analytics, the resulting clicks will not be accurately tracked. In these cases, the redirect will still work just fine after a 1-second timeout.
 
 [example_link]:https://kevingleason.me/link/?l=https://github.com/GleasonK/
 [google_setup]:https://support.google.com/analytics/answer/1008015
