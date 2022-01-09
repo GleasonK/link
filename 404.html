@@ -1,0 +1,65 @@
+<div id="header">404 - Link not found!</div>
+
+<table>
+	<tr><td>Original Request:</td><td><span id="request"></span></td></tr>
+	<tr><td>Redirect:</td><td><span id="redirect"></span></td></tr>
+	<tr><td>Example URL:</td><td><span id="valid"></span></td></tr>
+</table>
+<div id="footer">
+	Powered by <i>link</i> - free client side link tracking using Google Analytics. [<a href="https://github.com/GleasonK/link">View on GitHub</a>]
+</div>
+
+<style type="text/css">
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	#header {
+		padding: 25px;
+		text-align: center;
+		background: #eee;
+		font-size: 25px;
+	}
+	#footer {
+		padding: 25px;
+		text-align: center;
+		background: #eee;
+		font-size: 15px;
+	}
+	p {
+		margin-bottom: 0;
+		color: #555;
+	}
+	table {
+		margin: 25px auto;
+		font-family: monospace;
+		font-size: 14px;
+	}
+	td{
+		padding-right: 5px;
+	}
+	a {
+		color: #777;
+	}
+</style>
+
+<script type="text/javascript" src="link.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	const errors = {
+		noRedirect : `No redirect URL provided! Add '?${config.queryParam}=URL' to the request.`,
+	};
+
+	const badUrl = getQueryParam(config.queryParam); // needs error handling
+	const url = new URL(badUrl);
+	const badRedirect = getQueryParam(config.queryParam, badUrl) || errors.noRedirect;
+	console.log(badRedirect)
+
+	$('#request').html(badUrl);
+	$("#redirect").html(badRedirect);
+	$("#valid").html(`${window.location.href.substring(0, window.location.href.indexOf("404"))}?${config.queryParam}=http://kevingleason.me`);
+</script>

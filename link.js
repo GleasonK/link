@@ -8,22 +8,52 @@
 *
 */
 
-function getForwardUrl(url) {
-	const defaultUrl = "https://kevingleason.me";
-	const key = "l";
+// NOTE: Update config if anything changes from default.
+// The 404 can be updated to provide a default landing page for invalid requests.
+const config = {
+	repoName: "link",   // The name of the github repository
+	queryParam: "l",    // The query parameter with forward URL: `me.com/link/?l=url
+	url404: "404.html", // The 404 page to forward to: `404.hmtl?badAttemptHref`
+};
+
+function getCurrentUrlNoQuery() {
+	const currHref = window.location.href;
+	const repoFolder = "/"+config.repoName;
+	const idx = currHref.indexOf(repoFolder) + repoFolder.length;
+	return currHref.substring(0, idx); 
+}
+
+function get404Link() {
+	// Return 404.html/?l=https://kevingleaosn.me/link/?l=badlink
+	const badHref = encodeURI(window.location.href);
+	return `${getCurrentUrlNoQuery()}/${config.url404}?${config.queryParam}=${badHref}`;
+}
+
+function getQueryParam(param, opt_url) {
+	const url = opt_url || window.location;
 
 	// https://www.sitepoint.com/get-url-parameters-with-javascript/
-	const queryString = window.location.search;
+	const queryString = url.search;
 	const urlParams = new URLSearchParams(queryString);
-    return urlParams.get('l') || defaultUrl;
+    return urlParams.get(config.queryParam);
+}
+
+function getForwardUrl(url) {
+	return getQueryParam(config.queryParam) || get404Link();
+}
+
+function wrapInHttpIfNeeded(url) {
+	if (url.indexOf("http://") != 0 && url.indexOf("https://") != 0) {
+        url = "http://" + url;
+    }
+    return url;
 }
 
 function forwardUrl(url) {
+	// https://stackoverflow.com/questions/200337/whats-the-best-way-to-automatically-redirect-someone-to-another-webpage
 	// Forward to correct location.
-	// TODO: Do something with history?
-	// 
-    //window.location.href = url;
-	alert("forward to " + url)
+	// Use replace to avoid redirects when a user clicks "back" in their browser
+	window.location.replace(wrapInHttpIfNeeded(url));
 }
 
 // https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#knowing_when_the_hit_has_been_sent
@@ -47,10 +77,7 @@ function handleLinkClicks(event) {
 		transport: 'beacon',
 		nonInteraction: true,
 		hitCallback: createFunctionWithTimeout(function(){
-			alert("success.");
 			forwardUrl(url);
 		}),
 	});
 }
-
-handleLinkClicks();
