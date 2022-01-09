@@ -39,7 +39,7 @@ GitHub Pages will serve the _link_ tracking and forwarding repo for free!
 [How to Setup GitHub Pages for a Repository][gh_pages_setup]
 
 ## 5. All done!
-Links can now be created using `<username>.github.io/link/?l=<url>`.
+Links can now be created using `<username>.github.io/link/?l=<url>`, and clicks can be viewed in the "Events" section of Google Analytics. To view in Realtime select "Realtime > Events" in the GA menu.
 
 Github pages can be configured to a custom domain name - currently I use [kevingleason.me/link][example_link]), which allows creation of tracked links to have a custom name.
 
