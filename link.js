@@ -6,14 +6,17 @@
 *  1. How to send the data to GA => Custom Events
 *  2. What to do if GA fails => Have Timeouts in Place
 *
+* Google analytics can fail if a browser plug-in blocks analytics requests.
+* These requests will be forwarded after 1 second.
 */
 
-// NOTE: Update config if anything changes from default.
-// The 404 can be updated to provide a default landing page for invalid requests.
+// CHANGE THE CONFIG: At a minimum, set your Google Analytics ID in the `gaID` field.
+// Note: The 404 can be updated to provide a default landing page for invalid requests.
 const config = {
-	repoName: "link",   // The name of the github repository
-	queryParam: "l",    // The query parameter with forward URL: `me.com/link/?l=url
-	url404: "404.html", // The 404 page to forward to: `404.hmtl?badAttemptHref`
+	gaID: 'UA-46933211-3', // CHANGE ME: Google Analytics ID (https://support.google.com/analytics/answer/1008080)
+	repoName: "link",      // The name of the github repository
+	queryParam: "l",       // The query parameter with forward URL: `me.com/link/?l=url
+	url404: "404.html",    // The 404 page to forward to: `404.hmtl?badAttemptHref`
 };
 
 function getCurrentUrlNoQuery() {
